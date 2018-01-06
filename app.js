@@ -10,7 +10,7 @@ var users = require('./routes/users');
 var catalog = require('./routes/catalog');  //Import routes for "catalog" area of site
 var app = express();
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://atit:haridarshan53@ds239047.mlab.com:39047/local_library1';
+var mongoDB = process.env.MONGODB_URI ||'mongodb://atit:haridarshan53@ds239047.mlab.com:39047/local_library1';
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
